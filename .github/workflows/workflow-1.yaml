@@ -25,5 +25,5 @@ jobs:
 
       - name: show read me
         run: |
-          ls -ltrah
-          cat README.md
+          chmod +x github/workflows/script.sh
+          .github/workflows/script.sh
