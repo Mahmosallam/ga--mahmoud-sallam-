@@ -1,26 +1,29 @@
 name: workflow 1
 on: push
 
-
 jobs:
-    sallam:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout
-              uses: actions/checkout@v4
-            
-            - name: welcome
-              run: | 
-                echo "Hello world"
-                sudo apt update -y
-                sudo apt install -y cowsay
-                cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
-                cat dragon.txt
-            
-            - name: show read me
-              run: |
-                ls -ltrah
-                cat README.md
-              
-                
- 
+  sallam:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      
+      - name: welcome
+        run: | 
+          echo "Hello world"
+          sudo apt update -y
+          sudo apt install -y cowsay
+          cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+          cat dragon.txt
+
+  show-readme:
+    runs-on: ubuntu-latest
+    needs: sallam  
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: show read me
+        run: |
+          ls -ltrah
+          cat README.md
