@@ -19,7 +19,7 @@ jobs:
             
             - name: show read me
               run:
-                ls -l
+                ls -ltrah
                 cat README.md
               
                 
