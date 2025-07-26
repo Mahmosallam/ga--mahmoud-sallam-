@@ -18,7 +18,7 @@ jobs:
                 cat dragon.txt
             
             - name: show read me
-              run:
+              run: |
                 ls -ltrah
                 cat README.md
               
