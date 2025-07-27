@@ -13,16 +13,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      
-      - name: Debug ACR Variables
-        run: |
-          echo "Server: ${{ vars.SERVER }}"
-          echo "User: ${{ vars.USER_NAME }}"
-          echo "secret: ${{ secrets.PASSWORD }}"
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ vars.SERVER }}/${{ env.image_name }}:latest .
+          docker build -t ${{ vars.SERVER }}/${{ env.image_name }}:latest Dockerfile
 
       - name: Login to Azure Container Registry
         run: |
