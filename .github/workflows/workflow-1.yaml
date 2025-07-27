@@ -16,7 +16,7 @@ jobs:
           cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
           cat dragon.txt
 
-  show-readme:
+  sallam2:
     runs-on: ubuntu-latest
     needs: sallam  
     steps:
